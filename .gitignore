@@ -1,0 +1,9 @@
+.idea/dictionaries/
+.idea/vcs.xml
+LDA_eigen_values.npy
+LDA_eigen_vectors.npy
+__pycache__/
+eigenValues.npy
+eigenVectors.npy
+orl_faces/README
+orl_faces/.DS_Store
