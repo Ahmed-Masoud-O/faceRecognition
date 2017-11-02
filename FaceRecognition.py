@@ -28,7 +28,7 @@ training_data, testing_data, training_labels, testing_labels = load()
 
 PCA.PCA(training_data, 0.95, training_labels, testing_data, testing_labels)
 
-#LDA
+# LDA
 
 LDA.LDA(training_data, training_labels, testing_data, testing_labels, 7)
 

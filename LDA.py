@@ -16,7 +16,7 @@ def LDA(training_data, training_labels, testing_data, testing_labels, number_of_
     print("calculating between class scatter matrix ...")
     for i in range(0, 40):
         delta_mean = class_means[i] - total_mean
-        between_class_scatter_matrix += number_of_samples * delta_mean.T * delta_mean
+        between_class_scatter_matrix += number_of_samples * delta_mean * delta_mean.T
     print("calculated between class scatter matrix ...")
     print("Data is now being Centered ...")
     for i in range(0, 40):
@@ -50,7 +50,7 @@ def LDA(training_data, training_labels, testing_data, testing_labels, number_of_
     print(eigen_vectors)
     projection_matrix = eigen_vectors[:, eigen_vectors.shape[1]-39:eigen_vectors.shape[1]]
     projected_data = training_data * projection_matrix
-    kneighboursClassifier = KNeighborsClassifier(n_neighbors=1)
+    kneighboursClassifier = KNeighborsClassifier(n_neighbors=1, n_jobs=-1)
     kneighboursClassifier.fit(projected_data, training_labels.T)
     print(kneighboursClassifier.score(testing_data * projection_matrix, testing_labels.T))
 
