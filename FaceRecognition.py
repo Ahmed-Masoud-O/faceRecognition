@@ -5,7 +5,7 @@ import PCA
 import LDA
 
 
-def load(my_folder='orl_faces', train_count=3, test_count=7):
+def load(my_folder='orl_faces', train_count=7, test_count=3):
     training_data = []
     training_labels = []
     testing_data = []
@@ -30,7 +30,7 @@ PCA.PCA(training_data, 0.95, training_labels, testing_data, testing_labels)
 
 #LDA
 
-LDA.LDA(training_data, training_labels, testing_data, testing_labels, 3)
+LDA.LDA(training_data, training_labels, testing_data, testing_labels, 7)
 
 
 
